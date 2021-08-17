@@ -1,0 +1,88 @@
+body {
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  font-family: "Roboto Slab", serif;
+  margin: 10px;
+  padding: 10px;
+}
+h1 {
+  color: #5d048a;
+  font-size: 50px;
+  font-weight: 800;
+  margin: auto;
+  padding: 20px 0;
+}
+h2 {
+  color: #cf1e65;
+  font-size: 35px;
+  font-weight: 700;
+  margin: auto;
+  padding: 15px 0;
+}
+.currentTime,
+.currentClimate {
+  color: rgb(67, 68, 67);
+  font-size: 24px;
+  font-weight: 400;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+  vertical-align: text-top;
+}
+.currentTemperature {
+  color: #5d048a;
+  font-size: 130px;
+  font-weight: 900;
+  vertical-align: text-top;
+}
+.celsius,
+.fahrenheit {
+  color: dimgray;
+  font-size: 18px;
+  padding: 15px 0;
+  text-align: start;
+  vertical-align: text-top;
+}
+.currentWeatherDetail {
+  color: rgb(67, 68, 67);
+  font-size: 19px;
+  text-align: center;
+  padding: 40px 0;
+}
+.currentWeather {
+  margin-right: 100px;
+}
+.card {
+  background-color: #ebedee;
+  margin: 0 auto;
+  margin-right: 5px;
+  text-align: center;
+}
+.nextDays {
+  color: #bc1c5c;
+  font-size: 20px;
+  margin: 5px;
+}
+.nextHigherTemperatures {
+  color: #eb478b;
+  font-size: 23px;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+.nextLowerTemperatures {
+  color: rgb(57, 92, 78);
+  font-size: 18 px;
+  padding: 5px;
+}
+.futureIcons {
+  max-width: 30%;
+  height: auto;
+  text-align: center;
+  vertical-align: text-top;
+}
+small {
+  margin: 10px;
+  padding: 30px;
+  text-align: center;
+}
