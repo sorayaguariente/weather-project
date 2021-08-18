@@ -1,24 +1,38 @@
 body {
   background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   font-family: "Roboto Slab", serif;
-  margin: 10px;
-  padding: 10px;
-}
-.weatherBox {
-  background-color: rgb(215, 210, 238);
-  border-radius: 18px;
-  box-shadow: 0 30px 50px rgb(65 50 100/ 15%);
-  padding: 20px;
 }
 h2 {
   color: #cf1e65;
-  font-size: 35px;
-  font-weight: 700;
-  margin: auto;
-  padding: 15px 0;
+  font-size: 38px;
+  font-weight: 800;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+img {
+  width: 140px;
+  height: auto;
+}
+
+.weather-box-wrapper {
+  max-width: 700px;
+  margin: 40px auto;
+}
+.weather-box {
+  background-color: rgb(215, 210, 238);
+  border: 1px solid rgb(205, 131, 255);
+  border-radius: 18px;
+  box-shadow: 0 20px 35px rgb(65 50 100/ 15%);
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.btn-primary {
+  background-color: #00b9e6;
 }
 .btn-secundary {
-  background: #885df1;
+  background-color: #f75e10;
 }
 .currentTime,
 .currentClimate {
@@ -26,30 +40,27 @@ h2 {
   font-size: 24px;
   font-weight: 400;
 }
-img {
-  max-width: 80%;
-  height: auto;
-  text-align: center;
-  vertical-align: text-top;
-}
 .currentTemperature {
   color: #5d048a;
   font-size: 120px;
   font-weight: 900;
-  vertical-align: text-top;
+  margin-left: 20px;
+  margin-top: -20px;
 }
 .celsius,
 .fahrenheit {
   color: dimgray;
   font-size: 18px;
   padding: 15px 0;
+  position: relative;
   text-align: start;
+  top: 25px;
   vertical-align: text-top;
 }
 .currentWeatherDetail {
   color: rgb(67, 68, 67);
-  font-size: 19px;
-  text-align: center;
+  font-size: 17px;
+  text-align: left;
   padding: 40px 0;
 }
 .weatherIcons {
@@ -59,36 +70,36 @@ img {
   margin-right: 100px;
 }
 .card {
+  border-radius: 10px;
   background-color: #ebedee;
+  display: grid;
+  grid-gap: 20px;
   margin: 0 auto;
-  margin-right: 5px;
+  padding: 0;
+  width: 100px;
   text-align: center;
 }
 .nextDays {
-  color: #bc1c5c;
-  font-size: 20px;
+  color: #8a2ae3;
+  font-size: 17px;
   margin: 5px;
+  padding: 0;
 }
 .nextHigherTemperatures {
-  color: #eb478b;
-  font-size: 23px;
+  color: #f20061;
+  font-size: 21px;
   font-weight: bolder;
   margin-top: 10px;
 }
 .nextLowerTemperatures {
-  color: rgb(57, 92, 78);
-  font-size: 18 px;
+  color: #fc5db1;
+  font-size: 18px;
   padding: 5px;
 }
 .futureIcons {
-  max-width: 30%;
+  margin-top: -10px;
+  width: 25px;
   height: auto;
   text-align: center;
   vertical-align: text-top;
-}
-small {
-  display: block;
-  margin: 10px;
-  padding: 30px;
-  text-align: center;
 }

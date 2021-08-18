@@ -20,7 +20,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="weatherBox">  
+      <div class="weather-box">  
         <form id="search-form">
         <input type="text" id="city-search" placeholder="Enter a city" />
         <input type="submit" class="search btn btn-primary" value="Search" />
@@ -40,25 +40,20 @@
       <div class="row currentWeather">
         <div class="col-3 currentIcon" id="current-weather-icon">
           <img src="images/rainbow.png "/>
-        </div>
-        <div class="col-3 currentTemperature"> 
-          <span id="current-temperature">
-          
-          </span>
-          <span class="celsius">
-           <a href="#" id="celsius-link">
-            °C
-           </a>
-           |
+        </div>  
+        <div class="col-5 currentTemperature"> 
+          <span id="current-temperature">18</span><span class="celsius">
+            <a href="#" id="celsius-link">°C
+            </a>
+             |
           </span>
           <span class="fahrenheit">
-           <a href="#" id="fahrenheit-link">
-            °F
-           </a>
+            <a href="#" id="fahrenheit-link">°F
+            </a>
           </span>
         </div>
         <div class="col-3 currentWeatherDetail">
-            <img class="weatherIcons" src="images/humidity.png" />
+          <img class="weatherIcons" src="images/humidity.png" />
           Humidity: <span id="humidity-percentage">%</span>
           <br>
           <img class="weatherIcons" src="images/windy.png" />  
@@ -66,7 +61,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-2">
+        <div class="col">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title nextDays">Today
@@ -79,7 +74,7 @@
             </div>
           </div>
         </div>
-        <div class="col-2">
+        <div class="col">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title nextDays" id="one-day-later-date">Thu 15
@@ -92,7 +87,7 @@
             </div>
           </div>
         </div>
-        <div class="col-2">
+        <div class="col">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title nextDays" id="two-days-later-date">Fri 16
@@ -105,7 +100,7 @@
             </div>
           </div>
         </div>
-        <div class="col-2">
+        <div class="col">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title nextDays" id="three-days-later-date">Sat 17
@@ -118,7 +113,7 @@
             </div>
           </div>
         </div>
-        <div class="col-2">
+        <div class="col">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title nextDays" id="four-days-later-date">Sun 18
@@ -134,10 +129,12 @@
       </div>
       </div>
     </div>
-    <small>
-      <a href="https://github.com/sorayaguariente/weather-project">Open sorce code</a> by Soraya Guariente
-      <div>Icons made by <a href="" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-    </small>
+    <div class="weather-box-wrapper">
+      <small>
+        <a href="https://github.com/sorayaguariente/weather-project">Open sorce code</a> by Soraya Guariente
+        <div>Icons made by <a href="" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      </small>
+    </div>
     <script src="src/index.js">
     </script>
   </body>
