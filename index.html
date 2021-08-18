@@ -20,8 +20,8 @@
   </head>
   <body>
     <div class="container">
-      <h1>Weather</h1>
-      <form id="search-form">
+      <div class="weatherBox">  
+        <form id="search-form">
         <input type="text" id="city-search" placeholder="Enter a city" />
         <input type="submit" class="search btn btn-primary" value="Search" />
         <input type="submit" class="search btn btn-secondary" id="current-location-button" value="Current location" />
@@ -58,8 +58,10 @@
           </span>
         </div>
         <div class="col-3 currentWeatherDetail">
+            <img class="weatherIcons" src="images/humidity.png" />
           Humidity: <span id="humidity-percentage">%</span>
-          <br>  
+          <br>
+          <img class="weatherIcons" src="images/windy.png" />  
           Wind: <span id="wind-velocity"> km/h </span>
         </div>
       </div>
@@ -129,6 +131,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
     <small>

@@ -4,12 +4,11 @@ body {
   margin: 10px;
   padding: 10px;
 }
-h1 {
-  color: #5d048a;
-  font-size: 50px;
-  font-weight: 800;
-  margin: auto;
-  padding: 20px 0;
+.weatherBox {
+  background-color: rgb(215, 210, 238);
+  border-radius: 18px;
+  box-shadow: 0 30px 50px rgb(65 50 100/ 15%);
+  padding: 20px;
 }
 h2 {
   color: #cf1e65;
@@ -18,6 +17,9 @@ h2 {
   margin: auto;
   padding: 15px 0;
 }
+.btn-secundary {
+  background: #885df1;
+}
 .currentTime,
 .currentClimate {
   color: rgb(67, 68, 67);
@@ -25,14 +27,14 @@ h2 {
   font-weight: 400;
 }
 img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   text-align: center;
   vertical-align: text-top;
 }
 .currentTemperature {
   color: #5d048a;
-  font-size: 130px;
+  font-size: 120px;
   font-weight: 900;
   vertical-align: text-top;
 }
@@ -49,6 +51,9 @@ img {
   font-size: 19px;
   text-align: center;
   padding: 40px 0;
+}
+.weatherIcons {
+  max-width: 9%;
 }
 .currentWeather {
   margin-right: 100px;
