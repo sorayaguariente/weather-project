@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://kit.fontawesome.com/052c9193dd.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/052c9193dd.js"
+      crossorigin="anonymous"
+    ></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather now</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -20,122 +26,155 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-box">  
+      <div class="weather-box">
         <form id="search-form">
-        <input type="text" id="city-search" placeholder="Enter a city" />
-        <input type="submit" class="search btn btn-primary" value="Search" />
-        <input type="submit" class="search btn btn-secondary" id="current-location-button" value="Current location" />
-      </form>
-      <h2 id="selected-city">
-          City, Country
-      </h2>
-      <p>
-        <div class="currentTime" id="current-time">
-          wed, 21:45
+          <input type="text" id="city-search" placeholder="Enter a city" />
+          <input type="submit" class="search btn btn-primary" value="Search" />
+          <input
+            type="submit"
+            class="search btn btn-secondary"
+            id="current-location-button"
+            value="Current location"
+          />
+        </form>
+        <div class="weatherCity" id="selected-city">City, Country</div>
+        <div class="row currentWeather">
+          <div class="col-3">
+            <div class="currentTime" id="current-time">wed, 21:45</div>
+          </br>
+            <div class="currentClimate" id="weather-description">
+              Weather description
+            </div>
+            <div class="currentWeatherDetail">
+              Humidity: <span id="humidity-percentage">%</span>
+              <br />
+              Wind: <span id="wind-velocity"> km/h </span>
+            </div>
+          </div>
+          <div class="col-3 currentIcon" id="current-weather-icon">
+            <img src="images/rainbow.png " />
+          </div>
+          <div class="col-5 currentTemperature">
+            <span id="current-temperature">18</span
+            ><span class="celsius">
+              <a href="#" id="celsius-link">°C </a>
+              |
+            </span>
+            <span class="fahrenheit">
+              <a href="#" id="fahrenheit-link">°F </a>
+            </span>
+          </div>
         </div>
-        <div class="currentClimate" id="weather-description">
-          Weather description
-        </div>
-      </p>
-      <div class="row currentWeather">
-        <div class="col-3 currentIcon" id="current-weather-icon">
-          <img src="images/rainbow.png "/>
-        </div>  
-        <div class="col-5 currentTemperature"> 
-          <span id="current-temperature">18</span><span class="celsius">
-            <a href="#" id="celsius-link">°C
-            </a>
-             |
-          </span>
-          <span class="fahrenheit">
-            <a href="#" id="fahrenheit-link">°F
-            </a>
-          </span>
-        </div>
-        <div class="col-3 currentWeatherDetail">
-          <img class="weatherIcons" src="images/humidity.png" />
-          Humidity: <span id="humidity-percentage">%</span>
-          <br>
-          <img class="weatherIcons" src="images/windy.png" />  
-          Wind: <span id="wind-velocity"> km/h </span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title nextDays">Today
-              </h5>
-              <h6 class="card-subtitle nextHigherTemperatures" id="today-max-temp">°
-              </h6>
-              <p class="card-text nextLowerTemperatures" id="today-min-temp">°
-              </p>
-              <img src="images/rainbow.png" class="futureIcons" id="today-icon"/>
+        <div class="row">
+          <div class="col nextDaysDetails">
+            <h5 class="nextDays">Today</h5>
+            <div class="row">
+              <div class="col-6">
+                <img
+                  src="images/rainbow.png"
+                  class="futureIcons"
+                  id="today-icon"
+                />
+              </div>
+              <div class="col-6">
+                <h6 class="nextHigherTemperatures" id="today-max-temp">°</h6>
+                <p class="nextLowerTemperatures" id="today-min-temp">°</p>
+              </div>
+            </div>
+          </div>
+          <div class="col nextDaysDetails">
+            <h5 class="nextDays" id="one-day-later-date">Thu 15</h5>
+            <div class="row">
+              <div class="col-6">
+                <img
+                  src="images/rainbow.png"
+                  class="futureIcons"
+                  id="one-day-later-icon"
+                />
+              </div>
+              <div class="col-6">
+                <h6 class="nextHigherTemperatures" id="one-day-later-max">
+                  23°
+                </h6>
+                <p class="nextLowerTemperatures" id="one-day-later-min">12°</p>
+              </div>
+            </div>
+          </div>
+          <div class="col nextDaysDetails">
+            <h5 class="nextDays" id="two-days-later-date">Fri 16</h5>
+            <div class="row">
+              <div class="col-6">
+                <img
+                  src="images/rainbow.png"
+                  class="futureIcons"
+                  id="two-days-later-icon"
+                />
+              </div>
+              <div class="col-6">
+                <h6 class="nextHigherTemperatures" id="two-days-later-max">
+                  27°
+                </h6>
+                <p class="nextLowerTemperatures" id="two-days-later-min">15°</p>
+              </div>
+            </div>
+          </div>
+          <div class="col nextDaysDetails">
+            <h5 class="nextDays" id="three-days-later-date">Sat 17</h5>
+            <div class="row">
+              <div class="col-6">
+                <img
+                  src="images/rainbow.png"
+                  class="futureIcons"
+                  id="three-days-later-icon"
+                />
+              </div>
+              <div class="col-6">
+                <h6 class="nextHigherTemperatures" id="three-days-later-max">
+                  28°
+                </h6>
+                <p class="nextLowerTemperatures" id="three-days-later-min">
+                  16°
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col nextDaysDetails">
+            <h5 class="nextDays" id="four-days-later-date">Sun 18</h5>
+            <div class="row">
+              <div class="col-5">
+                <img
+                  src="images/rainbow.png"
+                  class="futureIcons"
+                  id="four-days-later-icon"
+                />
+              </div>
+              <div class="col-7">
+                <h6 class="nextHigherTemperatures" id="four-days-later-max">
+                  30°
+                </h6>
+                <p class="nextLowerTemperatures" id="four-days-later-min">
+                  17°
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title nextDays" id="one-day-later-date">Thu 15
-              </h5>
-              <h6 class="card-subtitle nextHigherTemperatures" id="one-day-later-max">23°
-              </h6>
-              <p class="card-text nextLowerTemperatures" id="one-day-later-min">12°
-              </p>
-              <img src="images/rainbow.png" class="futureIcons" id="one-day-later-icon"/>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title nextDays" id="two-days-later-date">Fri 16
-              </h5>
-              <h6 class="card-subtitle nextHigherTemperatures" id="two-days-later-max"> 27°
-              </h6>
-              <p class="card-text nextLowerTemperatures" id="two-days-later-min">15°
-              </p>
-              <img src="images/rainbow.png" class="futureIcons" id="two-days-later-icon"/>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title nextDays" id="three-days-later-date">Sat 17
-              </h5>
-              <h6 class="card-subtitle nextHigherTemperatures" id="three-days-later-max">28°
-              </h6>
-              <p class="card-text nextLowerTemperatures" id="three-days-later-min">16°
-              </p>
-              <img src="images/rainbow.png" class="futureIcons" id="three-days-later-icon"/>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title nextDays" id="four-days-later-date">Sun 18
-              </h5>
-              <h6 class="card-subtitle nextHigherTemperatures" id="four-days-later-max">30°
-              </h6>
-              <p class="card-text nextLowerTemperatures" id="four-days-later-min">17°
-              </p>
-              <img src="images/rainbow.png" class="futureIcons" id="four-days-later-icon"/>
-            </div>
-          </div>
-        </div>
-      </div>
       </div>
     </div>
     <div class="weather-box-wrapper">
       <small>
-        <a href="https://github.com/sorayaguariente/weather-project">Open sorce code</a> by Soraya Guariente
-        <div>Icons made by <a href="" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <a href="https://github.com/sorayaguariente/weather-project"
+          >Open sorce code</a
+        >
+        by Soraya Guariente
+        <div>
+          Icons made by <a href="" title="iconixar">iconixar</a> from
+          <a href="https://www.flaticon.com/" title="Flaticon"
+            >www.flaticon.com</a
+          >
+        </div>
       </small>
     </div>
-    <script src="src/index.js">
-    </script>
+    <script src="src/index.js"></script>
   </body>
 </html>

@@ -1,8 +1,8 @@
 body {
-  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  background: #ffffff;
   font-family: "Roboto Slab", serif;
 }
-h2 {
+.weatherCity {
   color: #cf1e65;
   font-size: 38px;
   font-weight: 800;
@@ -10,46 +10,55 @@ h2 {
   margin-top: 20px;
 }
 img {
+  margin-left: 40px;
   width: 140px;
   height: auto;
 }
 
 .weather-box-wrapper {
   max-width: 700px;
-  margin: 40px auto;
+  margin-top: -10px;
+  margin-left: 40px;
+  text-align: center;
 }
 .weather-box {
-  background-color: rgb(215, 210, 238);
-  border: 1px solid rgb(205, 131, 255);
+  background-color: #f4f4f4;
+  border: 1px solid #dadada;
   border-radius: 18px;
-  box-shadow: 0 20px 35px rgb(65 50 100/ 15%);
+  box-shadow: 0 10px 20px rgb(65 55 100/ 15%);
   max-width: 700px;
   margin: 40px auto;
-  padding: 20px;
+  padding: 40px;
 }
 
 .btn-primary {
   background-color: #00b9e6;
 }
 .btn-secundary {
+  text-align: right;
   background-color: #f75e10;
 }
-.currentTime,
-.currentClimate {
-  color: rgb(67, 68, 67);
-  font-size: 24px;
+.currentTime {
+  color: #cf1e65;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.currentClimate,
+.currentWeatherDetail {
+  color: #333333;
+  font-size: 18px;
   font-weight: 400;
 }
 .currentTemperature {
-  color: #5d048a;
+  color: #a1174e;
   font-size: 120px;
   font-weight: 900;
-  margin-left: 20px;
+  margin-left: 40px;
   margin-top: -20px;
 }
 .celsius,
 .fahrenheit {
-  color: dimgray;
   font-size: 18px;
   padding: 15px 0;
   position: relative;
@@ -57,49 +66,47 @@ img {
   top: 25px;
   vertical-align: text-top;
 }
-.currentWeatherDetail {
-  color: rgb(67, 68, 67);
-  font-size: 17px;
-  text-align: left;
-  padding: 40px 0;
-}
 .weatherIcons {
   max-width: 9%;
 }
-.currentWeather {
-  margin-right: 100px;
-}
-.card {
+
+.nextDaysDetails {
   border-radius: 10px;
-  background-color: #ebedee;
-  display: grid;
-  grid-gap: 20px;
-  margin: 0 auto;
-  padding: 0;
+  border: 1px solid #dadada;
+  background-color: #ffffff;
+  margin: 10px;
+  padding: 10px;
   width: 100px;
   text-align: center;
 }
 .nextDays {
-  color: #8a2ae3;
-  font-size: 17px;
+  color: #333333;
+  font-size: 18px;
   margin: 5px;
-  padding: 0;
+
+  text-align: left;
 }
 .nextHigherTemperatures {
   color: #f20061;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: bolder;
-  margin-top: 10px;
+  margin-left: -10px;
+  margin-top: 16px;
+  text-align: left;
 }
 .nextLowerTemperatures {
-  color: #fc5db1;
+  color: #e64c8a;
   font-size: 18px;
-  padding: 5px;
+  margin-left: -10px;
+  margin-top: -10px;
+  margin-bottom: 0;
+  text-align: left;
 }
 .futureIcons {
-  margin-top: -10px;
+  margin-left: 5px;
+  margin-top: 16px;
+  padding: 0;
   width: 25px;
   height: auto;
-  text-align: center;
-  vertical-align: text-top;
+  text-align: right;
 }
