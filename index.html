@@ -28,15 +28,12 @@
     <div class="container">
       <div class="weather-box">
         <form id="search-form">
-          <input type="text" id="city-search" placeholder="Enter a city" />
-          <input type="submit" class="search btn btn-primary" value="Search" />
-          <input
-            type="submit"
-            class="search btn btn-secondary"
-            id="current-location-button"
-            value="Current location"
-          />
-        </form>
+          <input type="text" id="city-search" class="citySearch" placeholder="Enter a city" />
+          <input type="submit" class="search btn-primary" value="Search" />
+          <span class="currentLocation">   Or use 
+              <a href="#" id="current-location-button" class="currentLocationLink">your current location  </a>
+          </span> 
+          </form>
         <div class="weatherCity" id="selected-city">City, Country</div>
         <div class="row currentWeather">
           <div class="col-3">
@@ -57,11 +54,11 @@
           <div class="col-5 currentTemperature">
             <span id="current-temperature">18</span
             ><span class="celsius">
-              <a href="#" id="celsius-link">°C </a>
+              <a href="#" id="celsius-link" class="tempUnit">°C </a>
               |
             </span>
             <span class="fahrenheit">
-              <a href="#" id="fahrenheit-link">°F </a>
+              <a href="#" id="fahrenheit-link" class="tempUnit">°F </a>
             </span>
           </div>
         </div>
