@@ -1,4 +1,5 @@
-function formattedDate(date) {
+function formattedDate(timestamp) {
+  let date = new Date(timestamp);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let currentDay = days[date.getDay()];
   let currentHour = date.getHours();
@@ -42,13 +43,17 @@ function showData(response) {
   )}°`;
   document.querySelector(
     "#weather-description"
-  ).innerHTML = `${response.data.weather[0].main}`;
+  ).innerHTML = `${response.data.weather[0].description}`;
   document.querySelector(
     "#humidity-percentage"
   ).innerHTML = `${response.data.main.humidity}%`;
   document.querySelector("#wind-velocity").innerHTML = `${Math.round(
     response.data.wind.speed
   )} km/h`;
+  //function formattedDate
+  document.querySelector("#current-time").innerHTML = formattedDate(
+    response.data.dt * 1000
+  );
   document
     .querySelector("#celsius-link")
     .addEventListener("click", convertTempCelsius);
@@ -155,10 +160,6 @@ function nextDaysData(date) {
 document
   .querySelector("#current-location-button")
   .addEventListener("click", getGeoposition);
-
-//function formattedDate
-let currentTime = new Date();
-document.querySelector("#current-time").innerHTML = formattedDate(currentTime);
 
 //function showCityFormValues
 document

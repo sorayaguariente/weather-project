@@ -53,7 +53,9 @@ img {
   font-size: 18px;
   font-weight: 400;
 }
-
+.currentClimate:first-letter {
+  text-transform: capitalize;
+}
 .currentClimate,
 .currentWeatherDetail,
 .currentLocation {
