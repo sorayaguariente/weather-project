@@ -31,10 +31,9 @@ function showData(response) {
   document.querySelector(
     "#selected-city"
   ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
-  document.createElement(
-    "img",
-    "#current-weather-icon"
-  ).src = `images/${response.data.weather[0].icon}.png`;
+  document
+    .querySelector("#current-weather-icon")
+    .setAttribute("src", `images/${response.data.weather[0].icon}.png`);
   document.querySelector("#today-max-temp").innerHTML = `${Math.round(
     response.data.main.temp_max
   )}°`;
@@ -93,50 +92,60 @@ function getGeoposition(event) {
       document.querySelector("#today-min-temp").innerHTML = `${Math.round(
         response.data.daily[0].temp.min
       )}°`;
-      document.createElement(
-        "img",
-        "#today-icon"
-      ).src = `images/${response.data.daily[0].weather[0].icon}.png`;
+      document
+        .querySelector("#today-icon")
+        .setAttribute(
+          "src",
+          `images/${response.data.daily[0].weather[0].icon}.png`
+        );
       document.querySelector("#one-day-later-max").innerHTML = `${Math.round(
         response.data.daily[1].temp.max
       )}°`;
       document.querySelector("#one-day-later-min").innerHTML = `${Math.round(
         response.data.daily[1].temp.min
       )}°`;
-      document.createElement(
-        "img",
-        "#one-day-later-icon"
-      ).src = `images/${response.data.daily[1].weather[0].icon}.png`;
+      document
+        .querySelector("#one-day-later-icon")
+        .setAttribute(
+          "src",
+          `images/${response.data.daily[1].weather[0].icon}.png`
+        );
       document.querySelector("#two-days-later-max").innerHTML = `${Math.round(
         response.data.daily[2].temp.max
       )}°`;
       document.querySelector("#two-days-later-min").innerHTML = `${Math.round(
         response.data.daily[2].temp.min
       )}°`;
-      document.createElement(
-        "img",
-        "#two-days-later-icon"
-      ).src = `images/${response.data.daily[2].weather[0].icon}.png`;
+      document
+        .querySelector("#two-days-later-icon")
+        .setAttribute(
+          "src",
+          `images/${response.data.daily[2].weather[0].icon}.png`
+        );
       document.querySelector("#three-days-later-max").innerHTML = `${Math.round(
         response.data.daily[3].temp.max
       )}°`;
       document.querySelector("#three-days-later-min").innerHTML = `${Math.round(
         response.data.daily[3].temp.min
       )}°`;
-      document.createElement(
-        "img",
-        "#three-days-later-icon"
-      ).src = `images/${response.data.daily[3].weather[0].icon}.png`;
+      document
+        .querySelector("#three-days-later-icon")
+        .setAttribute(
+          "src",
+          `images/${response.data.daily[3].weather[0].icon}.png`
+        );
       document.querySelector("#four-days-later-max").innerHTML = `${Math.round(
         response.data.daily[4].temp.max
       )}°`;
       document.querySelector("#four-days-later-min").innerHTML = `${Math.round(
         response.data.daily[4].temp.min
       )}°`;
-      document.createElement(
-        "img",
-        "#four-days-later-icon"
-      ).src = `images/${response.data.daily[4].weather[0].icon}.png`;
+      document
+        .querySelector("#four-days-later-icon")
+        .setAttribute(
+          "src",
+          `images/${response.data.daily[4].weather[0].icon}.png`
+        );
     }
   }
 }

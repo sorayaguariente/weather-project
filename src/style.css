@@ -3,8 +3,8 @@ body {
   font-family: "Roboto Slab", serif;
 }
 img {
-  margin-left: 40px;
-  width: 140px;
+  margin: 15px 0 0 5px;
+  width: 130px;
   height: auto;
 }
 .weatherCity {
@@ -67,7 +67,7 @@ img {
   color: #a1174e;
   font-size: 120px;
   font-weight: 900;
-  margin: -20px 0 0 40px;
+  margin: -15px 0 0 40px;
 }
 .celsius,
 .fahrenheit {
