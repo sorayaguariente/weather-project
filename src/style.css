@@ -69,8 +69,10 @@ img {
   font-weight: 900;
   margin: -15px 0 0 40px;
 }
-.celsius,
-.fahrenheit {
+.tempLinks {
+  color: #bb3eec;
+}
+.tempUnit {
   font-size: 18px;
   padding: 15px 0;
   position: relative;
@@ -78,8 +80,12 @@ img {
   top: 25px;
   vertical-align: text-top;
 }
-.tempUnit {
-  color: #bb3eec;
+.tempUnit .active {
+  color: #333333;
+  cursor: default;
+}
+.tempUnit .active:hover {
+  text-decoration: none;
 }
 .weatherIcons {
   max-width: 9%;

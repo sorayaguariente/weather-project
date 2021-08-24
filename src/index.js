@@ -25,9 +25,9 @@ function showCityFormValues(event) {
   searchCity(city);
 }
 function showData(response) {
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = response.data.main.temp;
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   document.querySelector(
     "#selected-city"
   ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
@@ -53,24 +53,26 @@ function showData(response) {
   document.querySelector("#current-time").innerHTML = formattedDate(
     response.data.dt * 1000
   );
-  document
-    .querySelector("#celsius-link")
-    .addEventListener("click", convertTempCelsius);
-  document
-    .querySelector("#fahrenheit-link")
-    .addEventListener("click", convertTempFahrenheit);
+  let celsiusLink = document.querySelector("#celsius-link");
+
+  celsiusLink.addEventListener("click", convertTempCelsius);
+  let fahrenheitLink = document.querySelector("#fahrenheit-link");
+  fahrenheitLink.addEventListener("click", convertTempFahrenheit);
+  function convertTempFahrenheit(event) {
+    event.preventDefault();
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let temperatureElement = document.querySelector("#current-temperature");
+    let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  }
 
   function convertTempCelsius(event) {
     event.preventDefault();
-    document.querySelector("#current-temperature").innerHTML = Math.round(
-      response.data.main.temp
-    );
-  }
-
-  function convertTempFahrenheit(event) {
-    event.preventDefault();
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
     document.querySelector("#current-temperature").innerHTML =
-      Math.round((response.data.main.temp * 9) / 5) + 32;
+      Math.round(celsiusTemperature);
   }
 }
 
@@ -164,6 +166,7 @@ function nextDaysData(date) {
   let dates = date.getDate();
   return `${nextDay} ${dates}`;
 }
+let celsiusTemperature = null;
 
 //function getGeoposition
 document
