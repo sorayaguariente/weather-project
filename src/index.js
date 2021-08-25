@@ -24,6 +24,7 @@ function showCityFormValues(event) {
   let city = document.querySelector("#city-search").value;
   searchCity(city);
 }
+
 function showData(response) {
   celsiusTemperature = response.data.main.temp;
   let temperatureElement = document.querySelector("#current-temperature");
@@ -34,12 +35,7 @@ function showData(response) {
   document
     .querySelector("#current-weather-icon")
     .setAttribute("src", `images/${response.data.weather[0].icon}.png`);
-  document.querySelector("#today-max-temp").innerHTML = `${Math.round(
-    response.data.main.temp_max
-  )}°`;
-  document.querySelector("#today-min-temp").innerHTML = `${Math.round(
-    response.data.main.temp_min
-  )}°`;
+
   document.querySelector(
     "#weather-description"
   ).innerHTML = `${response.data.weather[0].description}`;
@@ -49,6 +45,7 @@ function showData(response) {
   document.querySelector("#wind-velocity").innerHTML = `${Math.round(
     response.data.wind.speed
   )} km/h`;
+  getForecast(response.data.coord);
   //function formattedDate
   document.querySelector("#current-time").innerHTML = formattedDate(
     response.data.dt * 1000
@@ -75,84 +72,55 @@ function showData(response) {
       Math.round(celsiusTemperature);
   }
 }
+function getForecast(coordinates) {
+  let apiKey = "f1eea97ae866b4f1ba1d0c6161e558e3";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
-function getGeoposition(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(retrievePosition);
-  navigator.geolocation.getCurrentPosition(retrievePositionFuture);
-  function retrievePositionFuture(position) {
-    let apiKey = "f1eea97ae866b4f1ba1d0c6161e558e3";
-    let lat = position.coords.latitude;
-    let lon = position.coords.longitude;
-    let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&units=metric&appid=${apiKey}`;
-    axios.get(url).then(showFutureWeather);
-
-    function showFutureWeather(response) {
-      document.querySelector("#today-max-temp").innerHTML = `${Math.round(
-        response.data.daily[0].temp.max
-      )}°`;
-      document.querySelector("#today-min-temp").innerHTML = `${Math.round(
-        response.data.daily[0].temp.min
-      )}°`;
-      document
-        .querySelector("#today-icon")
-        .setAttribute(
-          "src",
-          `images/${response.data.daily[0].weather[0].icon}.png`
-        );
-      document.querySelector("#one-day-later-max").innerHTML = `${Math.round(
-        response.data.daily[1].temp.max
-      )}°`;
-      document.querySelector("#one-day-later-min").innerHTML = `${Math.round(
-        response.data.daily[1].temp.min
-      )}°`;
-      document
-        .querySelector("#one-day-later-icon")
-        .setAttribute(
-          "src",
-          `images/${response.data.daily[1].weather[0].icon}.png`
-        );
-      document.querySelector("#two-days-later-max").innerHTML = `${Math.round(
-        response.data.daily[2].temp.max
-      )}°`;
-      document.querySelector("#two-days-later-min").innerHTML = `${Math.round(
-        response.data.daily[2].temp.min
-      )}°`;
-      document
-        .querySelector("#two-days-later-icon")
-        .setAttribute(
-          "src",
-          `images/${response.data.daily[2].weather[0].icon}.png`
-        );
-      document.querySelector("#three-days-later-max").innerHTML = `${Math.round(
-        response.data.daily[3].temp.max
-      )}°`;
-      document.querySelector("#three-days-later-min").innerHTML = `${Math.round(
-        response.data.daily[3].temp.min
-      )}°`;
-      document
-        .querySelector("#three-days-later-icon")
-        .setAttribute(
-          "src",
-          `images/${response.data.daily[3].weather[0].icon}.png`
-        );
-      document.querySelector("#four-days-later-max").innerHTML = `${Math.round(
-        response.data.daily[4].temp.max
-      )}°`;
-      document.querySelector("#four-days-later-min").innerHTML = `${Math.round(
-        response.data.daily[4].temp.min
-      )}°`;
-      document
-        .querySelector("#four-days-later-icon")
-        .setAttribute(
-          "src",
-          `images/${response.data.daily[4].weather[0].icon}.png`
-        );
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let dateNumber = date.getDate();
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return `${days[day]} ${dateNumber}`;
+}
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastHTML = `<div class="row">`;
+  let forecastElement = document.querySelector("#forecast");
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
+        <h5 class="nextDays">${formatDay(forecastDay.dt)}</h5>
+          <div class="row">
+            <div class="col-6">
+              <img
+               src="images/${forecastDay.weather[0].icon}.png"
+               class="futureIcons"
+               id="today-icon"
+                />
+            </div>
+            <div class="col-6">
+              <h6 class="nextHigherTemperatures" id="today-max-temp">${Math.round(
+                forecastDay.temp.max
+              )}°</h6>
+              <p class="nextLowerTemperatures" id="today-min-temp">${Math.round(
+                forecastDay.temp.min
+              )}°</p>
+            </div>
+           </div>
+      </div> `;
     }
-  }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function retrievePosition(position) {
+  navigator.geolocation.getCurrentPosition(retrievePosition);
   let apiKey = "f1eea97ae866b4f1ba1d0c6161e558e3";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -168,29 +136,14 @@ function nextDaysData(date) {
 }
 let celsiusTemperature = null;
 
-//function getGeoposition
+//function retriveposition
 document
   .querySelector("#current-location-button")
-  .addEventListener("click", getGeoposition);
+  .addEventListener("click", retrievePosition);
 
 //function showCityFormValues
 document
   .querySelector("#search-form")
   .addEventListener("submit", showCityFormValues);
-
-//function nextDaysData
-let nextDays = new Date();
-document.querySelector("#one-day-later-date").innerHTML = `${nextDaysData(
-  nextDays
-)}`;
-document.querySelector("#two-days-later-date").innerHTML = `${nextDaysData(
-  nextDays
-)}`;
-document.querySelector("#three-days-later-date").innerHTML = `${nextDaysData(
-  nextDays
-)}`;
-document.querySelector("#four-days-later-date").innerHTML = `${nextDaysData(
-  nextDays
-)}`;
 
 searchCity("London");
