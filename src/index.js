@@ -93,7 +93,7 @@ function displayForecast(response) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `<div class="col">
+        `<div class="col nextDaysDetails"">
         <h5 class="nextDays">${formatDay(forecastDay.dt)}</h5>
           <div class="row">
             <div class="col-6">
@@ -119,8 +119,11 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function retrievePosition(position) {
-  navigator.geolocation.getCurrentPosition(retrievePosition);
+function retrievePosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+function searchLocation(position) {
   let apiKey = "f1eea97ae866b4f1ba1d0c6161e558e3";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
