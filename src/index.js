@@ -50,6 +50,7 @@ function showData(response) {
   document.querySelector("#current-time").innerHTML = formattedDate(
     response.data.dt * 1000
   );
+
   let celsiusLink = document.querySelector("#celsius-link");
 
   celsiusLink.addEventListener("click", convertTempCelsius);
@@ -71,7 +72,25 @@ function showData(response) {
     document.querySelector("#current-temperature").innerHTML =
       Math.round(celsiusTemperature);
   }
+  let sunriseTime = new Date(response.data.sys.sunrise * 1000);
+  let sunriseHour = sunriseTime.getHours();
+  let sunriseMinutes = sunriseTime.getMinutes();
+  let sunsetTime = new Date(response.data.sys.sunset * 1000);
+  let sunsetHour = sunsetTime.getHours();
+  let sunsetMinutes = sunsetTime.getMinutes();
+  let sunriseData = `${sunriseHour}:${sunriseMinutes}`;
+  let sunsetData = `${sunsetHour}:${sunsetMinutes}`;
+  let realTime = new Date();
+  let realHour = realTime.getHours();
+  let realMinutes = realTime.getMinutes();
+  let realtimeData = `${realHour}:${realMinutes}`;
+
+  if (realtimeData > sunriseData && realtimeData < sunsetData) {
+    let dayStyle = document.querySelector("weather-box");
+    dayStyle.classList.add("day");
+  }
 }
+
 function getForecast(coordinates) {
   let apiKey = "f1eea97ae866b4f1ba1d0c6161e558e3";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;

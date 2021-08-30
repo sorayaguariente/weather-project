@@ -19,7 +19,7 @@ img {
   margin-top: -10px;
   text-align: center;
 }
-.weather-box {
+.weatherBox {
   background-color: #f4f4f4;
   border: 1px solid #dadada;
   border-radius: 18px;
@@ -27,6 +27,9 @@ img {
   max-width: 700px;
   margin: 40px auto;
   padding: 40px;
+}
+.weatherBox .day {
+  background-color: #393655;
 }
 
 .btn-primary {
