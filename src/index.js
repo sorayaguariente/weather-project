@@ -86,8 +86,18 @@ function showData(response) {
   let realtimeData = `${realHour}:${realMinutes}`;
 
   if (realtimeData > sunriseData && realtimeData < sunsetData) {
-    let dayStyle = document.querySelector("weather-box");
-    dayStyle.classList.add("day");
+    document.body.style.backgroundColor = "#ffffff";
+    document.querySelector("#weather-box").classList.add("day");
+    document
+      .querySelector("#current-location")
+      .classList.add("currentLocationText");
+    document
+      .querySelector("#current-weather-detail")
+      .classList.add("currentLocationText");
+    document
+      .querySelector("#weather-description")
+      .classList.add("currentLocationText");
+    document.querySelector("#personal-infos").classList.add("personalInfos");
   }
 }
 
@@ -102,7 +112,7 @@ function formatDay(timestamp) {
   let dateNumber = date.getDate();
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  return `${days[day]} ${dateNumber}`;
+  return `${days[day]}   ${dateNumber}`;
 }
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -112,7 +122,7 @@ function displayForecast(response) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `<div class="col nextDaysDetails"">
+        `<div class="col nextDaysDetails" id="#next-days-details">
         <h5 class="nextDays">${formatDay(forecastDay.dt)}</h5>
           <div class="row">
             <div class="col-6">

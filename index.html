@@ -26,11 +26,11 @@
   </head>
   <body>
     <div class="container">
-      <div class="weatherBox day">
+      <div class="weatherBox" id="weather-box">
         <form id="search-form">
           <input type="search" id="city-search" class="citySearch" placeholder="Enter a city" autocomplete="off" />
           <input type="submit" class="search btn-primary" value="Search" />
-          <span class="currentLocation">   Or use 
+          <span class="currentLocation" id="current-location">   Or use 
               <a href="#" id="current-location-button" class="currentLocationLink">your current location  </a>
           </span> 
           </form>
@@ -41,7 +41,7 @@
           </br>
             <div class="currentClimate" id="weather-description">
             </div>
-            <div class="currentWeatherDetail">
+            <div class="currentWeatherDetail" id="current-weather-detail">
               Humidity: <span id="humidity-percentage">%</span>
               <br />
               Wind: <span id="wind-velocity"> km/h </span>
@@ -65,15 +65,17 @@
     </div>
     <div class="weather-box-wrapper">
       <small>
-        <a href="https://github.com/sorayaguariente/weather-project"
+        <div id="personal-infos">  
+          <a href="https://github.com/sorayaguariente/weather-project"
           >Open sorce code</a
-        >
-        by Soraya Guariente
-        <div>
-          Icons made by <a href="https://www.freepik.com" title="iconixar">iconixar</a> from
-          <a href="https://www.flaticon.com/" title="Flaticon"
-            >www.flaticon.com</a
           >
+          by Soraya Guariente
+          <div>
+          Icons made by <a href="https://www.freepik.com" title="iconixar">iconixar</a> from
+            <a href="https://www.flaticon.com/" title="Flaticon"
+            >www.flaticon.com</a
+            >
+          </div>
         </div>
       </small>
     <script src="src/index.js"></script>

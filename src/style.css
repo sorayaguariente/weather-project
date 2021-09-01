@@ -1,7 +1,8 @@
 body {
-  background: #ffffff;
+  background: #525151;
   font-family: "Roboto Slab", serif;
 }
+
 img {
   margin: 15px 0 0 5px;
   width: 130px;
@@ -20,7 +21,7 @@ img {
   text-align: center;
 }
 .weatherBox {
-  background-color: #f4f4f4;
+  background-color: #333333;
   border: 1px solid #dadada;
   border-radius: 18px;
   box-shadow: 5px 10px 20px rgb(65 55 100/ 15%);
@@ -28,8 +29,8 @@ img {
   margin: 40px auto;
   padding: 40px;
 }
-.weatherBox .day {
-  background-color: #393655;
+.day {
+  background-color: #f4f4f4;
 }
 
 .btn-primary {
@@ -62,10 +63,14 @@ img {
 .currentClimate,
 .currentWeatherDetail,
 .currentLocation {
-  color: #333333;
+  color: #f4f4f4;
   font-size: 18px;
   font-weight: 400;
 }
+.currentLocationText {
+  color: #333333;
+}
+
 .currentTemperature {
   color: #f20061;
   font-size: 120px;
@@ -102,12 +107,14 @@ img {
   padding: 10px;
   text-align: center;
 }
+
 .nextDays {
   color: #333333;
   font-size: 18px;
   margin: 5px;
   text-align: left;
 }
+
 .nextHigherTemperatures {
   color: #f20061;
   font-size: 18px;
@@ -127,4 +134,10 @@ img {
   width: 25px;
   height: auto;
   text-align: right;
+}
+small {
+  color: #ffffff;
+}
+.personalInfos {
+  color: #333333;
 }
