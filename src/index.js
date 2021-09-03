@@ -72,33 +72,6 @@ function showData(response) {
     document.querySelector("#current-temperature").innerHTML =
       Math.round(celsiusTemperature);
   }
-  let sunriseTime = new Date(response.data.sys.sunrise * 1000);
-  let sunriseHour = sunriseTime.getHours();
-  let sunriseMinutes = sunriseTime.getMinutes();
-  let sunsetTime = new Date(response.data.sys.sunset * 1000);
-  let sunsetHour = sunsetTime.getHours();
-  let sunsetMinutes = sunsetTime.getMinutes();
-  let sunriseData = `${sunriseHour}:${sunriseMinutes}`;
-  let sunsetData = `${sunsetHour}:${sunsetMinutes}`;
-  let realTime = new Date();
-  let realHour = realTime.getHours();
-  let realMinutes = realTime.getMinutes();
-  let realtimeData = `${realHour}:${realMinutes}`;
-
-  if (realtimeData > sunriseData && realtimeData < sunsetData) {
-    document.body.style.backgroundColor = "#ffffff";
-    document.querySelector("#weather-box").classList.add("day");
-    document
-      .querySelector("#current-location")
-      .classList.add("currentLocationText");
-    document
-      .querySelector("#current-weather-detail")
-      .classList.add("currentLocationText");
-    document
-      .querySelector("#weather-description")
-      .classList.add("currentLocationText");
-    document.querySelector("#personal-infos").classList.add("personalInfos");
-  }
 }
 
 function getForecast(coordinates) {

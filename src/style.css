@@ -1,5 +1,5 @@
 body {
-  background: #525151;
+  background: #ffffff;
   font-family: "Roboto Slab", serif;
 }
 
@@ -21,16 +21,13 @@ img {
   text-align: center;
 }
 .weatherBox {
-  background-color: #333333;
+  background-color: #f4f4f4;
   border: 1px solid #dadada;
   border-radius: 18px;
   box-shadow: 5px 10px 20px rgb(65 55 100/ 15%);
   max-width: 700px;
   margin: 40px auto;
   padding: 40px;
-}
-.day {
-  background-color: #f4f4f4;
 }
 
 .btn-primary {
@@ -63,12 +60,9 @@ img {
 .currentClimate,
 .currentWeatherDetail,
 .currentLocation {
-  color: #f4f4f4;
+  color: #333333;
   font-size: 18px;
   font-weight: 400;
-}
-.currentLocationText {
-  color: #333333;
 }
 
 .currentTemperature {
@@ -135,9 +129,7 @@ img {
   height: auto;
   text-align: right;
 }
-small {
-  color: #ffffff;
-}
+
 .personalInfos {
   color: #333333;
 }
