@@ -8,7 +8,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather now</title>
+    <title>Weather now and forecast for 5 days</title>
+    <meta name="description" content="Weather app displays current temperature and forecast for 5 days">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,13 +31,13 @@
         <form id="search-form">
           <input type="search" id="city-search" class="citySearch" placeholder="Enter a city" autocomplete="off" />
           <input type="submit" class="search btn-primary" value="Search" />
-          <span class="currentLocation" id="current-location">   Or use 
+          <span class="currentLocation d-block d-md-inline" id="current-location">   Or use 
               <a href="#" id="current-location-button" class="currentLocationLink">your current location  </a>
           </span> 
           </form>
         <div class="weatherCity" id="selected-city"></div>
         <div class="row currentWeather">
-          <div class="col-4">
+          <div class="col-4 d-none d-sm-block">
             <div class="currentTime" id="current-time"></div>
           </br>
             <div class="currentClimate" id="weather-description">
@@ -52,7 +53,7 @@
           </div>
           <div class="col-5 currentTemperature">
             <span id="current-temperature">18</span
-            ><span class="tempUnit">
+            ><span class="tempUnit d-none d-sm-inline">
               <a href="#" id="celsius-link" class="active tempLinks">°C </a>
               |
               <a href="#" id="fahrenheit-link" class="tempLinks">°F </a>

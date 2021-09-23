@@ -22,7 +22,7 @@ img {
 }
 .weatherBox {
   background-color: #f4f4f4;
-  border: 1px solid #dadada;
+  border: 1px solid #9e8181;
   border-radius: 18px;
   box-shadow: 5px 10px 20px rgb(65 55 100/ 15%);
   max-width: 700px;
@@ -132,4 +132,43 @@ img {
 
 .personalInfos {
   color: #333333;
+}
+@media (max-width: 768px) {
+  .currentLocation {
+    margin-top: 20px;
+  }
+  .currentTemperature {
+    font-size: 100px;
+    margin-left: 0;
+  }
+  .currentIcon {
+    max-width: 40%;
+  }
+  .nextDaysDetails {
+    margin: 4px;
+    padding: 5px;
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  .citySearch {
+    display: block;
+    margin: 0 auto;
+    padding: 3px 30px;
+  }
+  .search {
+    display: block;
+    margin: 20px auto;
+    padding: 5px 40px;
+  }
+  .currentLocation {
+    text-align: center;
+  }
+  .currentWeather {
+    text-align: right;
+    margin-right: -70px;
+  }
+  .weatherCity {
+    text-align: center;
+  }
 }
